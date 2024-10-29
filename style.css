@@ -253,8 +253,12 @@ section{
 }
 
 .projects-content{
+  display: block;
+  width: 300px;
   background-color: black;
   align-items: center;
+  margin: 0 auto;
+  
 }
 
 .projects-content h1{
@@ -264,7 +268,12 @@ section{
   font-size: 60px;  
 }
 
-.projects-content
+.projects-content p{
+  text-align: center;
+  padding-top: 20px;
+  color:#D0F0C0;
+  font-size: 30px;
+}
 
 
 @keyframes showRight {
