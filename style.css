@@ -153,9 +153,36 @@ section{
 }
 
 .about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  background-color: #D0F0C0;
+
+}
+.about-content{
+  color:#333333;
+  clear: both;
+  align-self: left;
+  margin-right: auto;
+}
+
+.about-content h1{
+  position: relative;
+  margin-top: 20px;   
+  margin-bottom: 30px;
+  color:#333333;
+  font-size: 70px;
   
 }
 
+.about-content p{
+  color:#333333;
+  font-size: 30px;
+  clear: both;
+  align-self: left;
+  margin-right: auto;
+}
 
 
 @keyframes showRight {
