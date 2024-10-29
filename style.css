@@ -136,13 +136,16 @@ section{
   padding: 1rem 2.8rem;
   background-color: #D0F0C0;
   border-radius: 4rem;
-  font-size: 2rem;
+  font-size: 3rem;
   color:#333333;
   font-weight:600;
   letter-spacing: 0.3rem;
   border:2px solid #333333;
   transition: 0.3s ease;
   cursor: pointer;
+}
+.btn a{
+  color:#333333;
 }
 
 .btn:hover{
@@ -288,9 +291,23 @@ section{
   color: white;
   font-size: 70px;
 }
+.contact-content a{
+  text-decoration: underline;
+  padding-top: 20px;
+  font-size: 20px;
+  color:#333333;
+}
+
+
+.contact-content h2:hover{
+  transform: scale3d(1.03);
+  background-color: wheat;
+  color: white;
+}
 
 .links a{
-  padding-top: 100px;
+  text-decoration: none;
+  padding-top: 80px;
   display: inline-flex;
   justify-content: center;
   width: 40px;
