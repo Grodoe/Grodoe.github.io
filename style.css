@@ -288,6 +288,29 @@ section{
   font-size: 30px;
 }
 
+.projects-list{
+  margin-left: -400px;
+  margin-top: 50px;
+  display:inline-table ;
+  position: relative;
+  
+}
+
+.personal-portfolio img{
+  width: 200px;
+  height: auto;
+  
+}
+
+.personal-portfolio-but{
+  text-align: center;
+  font-size: 30px;
+  color:#D0F0C0;
+}
+
+.personal-portfolio-but a{
+  color:#D0F0C0;
+}
 .contact{
   background-color: wheat;
 }
