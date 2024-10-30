@@ -238,6 +238,14 @@ section{
   scale: 175%;
 }
 
+.breaking-board-img{
+  padding-top: 30px;
+  max-width: auto;
+  max-height: auto;
+  scale: 135%;
+
+}
+
 .quadrant h2 { 
   margin-bottom: 10px; 
   font-size: 24px; 
