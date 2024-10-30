@@ -306,6 +306,7 @@ section{
 
 .links a{
   text-decoration: none;
+  margin-left: 3rem;
   padding-top: 80px;
   display: inline-flex;
   justify-content: center;
