@@ -74,7 +74,7 @@ nav a{
 }
 nav a:hover,
 nav a.active{
-  color:white;
+  color:lightpink;
 }
 
 section{
@@ -178,8 +178,9 @@ section{
 .about-content h2{
   color: #333333;
   font-size: 30px;
-  position:absolute ;
   text-align: center;
+  position:absolute;
+  
 }
 
 
