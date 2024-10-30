@@ -149,7 +149,7 @@ section{
 
 .btn:hover{
   transform: scale3d(1.03);
-  background-color: white;
+  background-color: lightpink;
   color: black;
 
 }
