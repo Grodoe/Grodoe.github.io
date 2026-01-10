@@ -83,25 +83,68 @@ section{
 }
 
 .home{
+  position: relative; /* make absolute children position relative to this section */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8rem;
+  gap: 6rem;
   background-color: #D0F0C0;
-}
+  padding-top: 7.5rem; /* ensure content sits below fixed header */
+} 
 .home-img{
-    position: absolute;
-    top: 0;
-    right: 0px;
-    width: 645px;
-    height: 70%;
-    scale: 70%;
+  padding-top: 7.5rem;
+  position: absolute;
+  top: 2rem; /* slightly lower to clear header visually */
+  right: 6%;
+  width: min(420px, 34%);
+  height: auto;
+  transform: none;
+  z-index: 1;
 }
+
+.profile-figure {
+  display: inline-block;
+  max-width: 360px;
+  text-align: left;
+  margin: 0.6rem;
+}
+
+.profile-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.profile-figure figcaption {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+  color: #333333;
+  background: rgba(208,240,192,0.98);
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  line-height: 1.3;
+} 
 
 .home-content{
   position: relative;
   margin-right: auto;
   padding-right: 20px;
+}
+
+/* Skill block: nudge upward ~50px (desktop) */
+.skill-block {
+  margin-bottom: 20px;
+
+  transition: top 0.18s ease;
+}
+
+@media (max-width: 900px) {
+  .skill-block { top: -5.6rem; /* mobile: less aggressive */ }
+}
+
+@media (min-width: 1200px) {
+  .skill-block { top: -7.4rem; /* large screens: slightly more */ }
 }
 
 .home-content h1{
@@ -232,18 +275,76 @@ section{
 
 }
 .ultimate-frisbee-img{
-  padding-top: 90px;
-  max-width: auto;
-  max-height: auto;
-  scale: 175%;
+  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ultimate-frisbee-img img{
+  width: 100%;
+  max-width: 380px; /* larger to show more detail */
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .ultimate-frisbee-img img { max-width: 320px; }
+}
+
+/* Remove hover and shadow effects for images inside the About section */
+.about .taekwondo-kick-img img,
+.about .ultimate-frisbee-img img,
+.about .coding-img img,
+.about .breaking-board-img img {
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.about img:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 .breaking-board-img{
-  padding-top: 30px;
-  max-width: auto;
-  max-height: auto;
-  scale: 135%;
+  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.breaking-board-img img{
+  width: 100%;
+  max-width: 220px; /* fits comfortably inside the quadrant */
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Taekwondo image: scale up and center within quadrant */
+.taekwondo-kick-img{
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.taekwondo-kick-img img{
+  width: 100%;
+  max-width: 460px; /* increased to show more detail */
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .taekwondo-kick-img img{
+    max-width: 320px;
+  }
 }
 
 .quadrant h2 { 
@@ -258,7 +359,7 @@ section{
 }
 
 .quadrant img { 
-  width: 100%; 
+  width: auto; 
   height: auto; 
   max-width: 300px;
   margin: 0 auto;
@@ -267,11 +368,12 @@ section{
 
 .projects-content{
   display: block;
-  width: 300px;
-  background-color: black;
+  width: 100%;
+  max-width: 1200px;
+  background-color: transparent; /* keep page background consistent */
   align-items: center;
   margin: 0 auto;
-  
+  padding: 2rem 1rem;
 }
 
 .projects-content h1{
@@ -289,18 +391,158 @@ section{
 }
 
 .projects-list{
-  margin-left: -400px;
   margin-top: 50px;
-  display:inline-table ;
-  position: relative;
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  gap: 2.4rem;
+  align-items: start;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
-.personal-portfolio img{
-  width: 200px;
-  height: auto;
-  
+@media (max-width: 1100px) {
+  .projects-list { grid-template-columns: repeat(2, 1fr); }
 }
+
+@media (max-width: 700px) {
+  .projects-list { grid-template-columns: 1fr; }
+}
+
+.project-card{
+  background: rgba(0,0,0,0.06);
+  border: 1px solid rgba(51,51,51,0.08);
+  padding: 1.2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.project-thumb{
+  width: 100%;
+  height: auto; /* let anchor control circular size */
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e6f7ea, #f7e6f7);
+  padding: 0.6rem;
+}
+
+.project-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-link-thumb {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  transition: transform 0.18s ease;
+  border: 3px solid #333333;
+}
+
+.project-link-thumb:hover { transform: translateY(-4px); }
+.project-link-thumb:focus { outline: 3px solid lightpink; outline-offset: 4px; }
+
+.project-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .project-link-thumb { width: 120px; height: 120px; }
+  .project-thumb { height: auto; padding: 0.4rem; }
+}
+
+.project-card h3{
+  font-size: 1.8rem;
+  margin: 0.6rem 0 0.2rem;
+}
+
+.project-note{
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+.project-link{
+  display: inline-block;
+  font-size: 1.4rem;
+  color: #D0F0C0;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.project-link:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 900px){
+  .project-thumb{ height: 120px; }
+  .project-card h3{ font-size: 1.6rem; }
+}
+
+
+.personal-portfolio{
+  display: flex;
+  flex-direction: column; /* stack image and description vertically */
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.portfolio-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid #333333;
+}
+
+@media (max-width: 900px) {
+  .portfolio-avatar { width: 120px; height: 120px; }
+}
+
+/* Clickable avatar wrapper */
+.portfolio-link {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.18s ease;
+}
+
+.portfolio-link:hover { transform: translateY(-4px); }
+.portfolio-link:focus { outline: 3px solid lightpink; outline-offset: 4px; }
+
+.portfolio-desc {
+  text-align: center;
+  color: #D0F0C0;
+  font-size: 1.6rem;
+  margin-top: 0.8rem;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .portfolio-desc { font-size: 1.4rem; max-width: 85%; }
+}
+
 
 .personal-portfolio-but{
   text-align: center;
@@ -349,6 +591,52 @@ section{
   height: 40px;
   font-size: 40px;
   color:#333333;
+}
+
+@media (max-width: 900px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6rem;
+    gap: 2rem;
+  }
+
+  .home-img {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .profile-figure {
+    max-width: 75%;
+    margin: 0.6rem auto;
+  }
+
+  .profile-figure figcaption {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content p {
+    margin-right: 0;
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile-figure {
+    max-width: 480px;
+  }
+  .profile-figure figcaption {
+    font-size: 1.9rem;
+  }
 }
 
 @keyframes showRight {

@@ -29,15 +29,32 @@
 
   <section class="home" id="home">
     <div class="home-img">
-      <img src="/images/personal-profile-home-img.jpg" alt="picture of Gordon doing taekwondo"> 
+      <figure class="profile-figure">
+        <img src="/images/personal-profile-home-img.jpg" alt="Gordon performing a taekwondo kick" aria-describedby="fact-caption">
+        <figcaption id="fact-caption">Fun fact: In 2025 I won a bronze medal — the first Canadian to medal in taekwondo at the World University Games.</figcaption>
+      </figure>
     </div>
     <div class="home-content">
-      <h3>Software Developer</h3>
-      <h2>Skills: C++ | Java | Python | JavaScript | HTML | CSS | Babylon.js | Git |</h2>
-      <h1>Gordon Cheuk</h1>
+      <div class="skill-block">
+        <h1>Gordon Cheuk</h1>
+        <h3>Software Developer</h3>
+        <h2>Languages: C, C++, Python, Java, JavaScript
+            <br>
+            Web & Frameworks: HTML, CSS, Node.js, React
+            <br>
+            Libraries & Tools: Git, GitHub, NumPy, REST APIs, JSON, PyTorch
+            <br>
+            Concepts: Data Structures, Algorithm Design, Memory Management, Linear Algebra, 
+            <br>
+            Systems Programming, Probability & Simulation, Fundamentals of AI
+        </h2>
+      </div>
       <p>I’m a 3rd year student at Simon Fraser University studying Computer Science.
-        I have a passion for Software Development, Taekwondo and Ultimate Frisbee.
-        Come learn more about me here!</p>  
+        I have interests in Machine Learning and AI based development. I enjoy creating fun projects such as 
+        Reversi AI, where I used traditional Machine learning algorithms to compete against human players. 
+        In my free time, I represent Canada at Taekwondo competitions around the world. I've been practicing since I was 5 
+        years old and was on the national team for 6 years.
+     </p>  
       <div class="btn">
         <a href="#contact">Contact</a>
       </div>
@@ -52,8 +69,9 @@
       <div class="quadrant" id="taekwondo"> 
         <h1>Taekwondo</h1> 
         <p>Taekwondo is something I've started since I was 5. I started competing at 9 years old
-          and was on the national team for 5 years. It taught me discipline, perserverance and
-           how to deal with failure. I met many life-long friends throughout my time doing taekwondo.
+          and was on the national team for 6 years. Taekwondo taught me how to work through physical and mental challenges.
+          For me, it was about performing even when I was tired, injured, or not in the mood. It taught me discipline, perseverance, and resilience. 
+          By overcoming these challenges, I was able to grow as a person and become stronger both physically and mentally.
         </p> 
         <div class="taekwondo-kick-img">
           <img src="/images/taekwondo-kick-img.jpg" alt="person doing a high sidekick"> 
@@ -70,13 +88,12 @@
        
       </div> 
       <div class="quadrant" id="software-development"> 
-        <h1>Software Development</h1> 
-        <p>My inspiration and love for software development came from video games and movies as many would. I was never 
-           much of an artist when it came to the paper and pen, or the paint brush. But to me, software development, is the same. 
-           Software development is colorful, and its value lies more than just 1s and 0s.
-        </p> 
+        <h1>Computer Science</h1> 
+        <p>My inspiration and love for software development came from video games and movies. When I first got into programming,
+          it defintely wasn't easy and not what I imagined. But as I kept going and delved deeper, I found myself immersed in areas of Computer Science that were previously unknown to me.
+          Machine Learning and AI were areas I found particularly fascinating. As I learned more, I wanted to create projects that incorporated these concepts. 
         <div class="coding-img">
-          <img src="images/coding-img.png" alt="heap sort algorithm code">
+          <img src="images/coding-img.jpg" alt="machine-learning">
         </div>
       
       </div> 
@@ -96,19 +113,51 @@
     <div class="projects-content">
 
       <h1>Projects</h1>
-      <p>more projects coming soon...</p>
-      <div class="projects-list">
-        <div class="personal-portfolio">
-          <img src="images/personal-portfolio-img.png" alt="picture of personal profile">
-          </div>
-          <div class="personal-portfolio-but">
-            <a href="https://grodoe.github.io/">see more</a>
-          </div>
-
+      <p>click to view</p>
+      <div class="projects-list projects-grid">
+         <div class="project-card" id="project-1">
+          <a href="https://github.com/Grodoe/CMPT310_G16" class="project-link-thumb" aria-label="Open Reversi AI repository" target="_blank" rel="noopener noreferrer">
+            <div class="project-thumb">
+              <img src="/images/reversi-ai.png" alt="Reversi AI project screenshot" class="project-avatar">
+            </div>
+          </a>
+          <p class="project-title">Reversi AI</p>
+          <p class="project-note">A Reversi game with AI opponent using Minimax and Alpha-Beta Pruning algorithms.</p>
         </div>
-      </div>
 
-    </div>
+         <div class="project-card" id="project-2">
+          <a href="https://stubbyai.vercel.app/" class="project-link-thumb" aria-label="Open StubbyAI site" target="_blank" rel="noopener noreferrer">
+            <div class="project-thumb">
+              <img src="/images/studybuddy.png" alt="StubbyAI screenshot" class="project-avatar">
+            </div>
+          </a>
+          <h3>Stubby AI</h3>
+          <p class="project-title">Studybuddy</p>
+          <p class="project-note">A personalized AI tutor with various characters taylored for different learning styles.</p>
+        </div>
+
+        
+        <div class="project-card" id="project-3">
+          <a href="https://clearwrite.netlify.app/" class="project-link-thumb" aria-label="Open ClearWrite site" target="_blank" rel="noopener noreferrer">
+            <div class="project-thumb">
+              <img src="/images/clearwrite.png" alt="ClearWrite project screenshot" class="project-avatar">
+            </div>
+          </a>
+          <h3>ClearWrite</h3>
+          <p class="project-title">ClearWrite</p>
+          <p class="project-note">A writing-clarity web app for improving text readability.</p>
+         </div>
+
+        <div class="project-card personal-portfolio">
+          <a href="https://grodoe.github.io/" class="portfolio-link" aria-label="Open personal portfolio">
+            <img src="/images/personal-portfolio-img.jpg" alt="Gordon's portfolio image" class="portfolio-avatar">
+          </a>
+          <p class="portfolio-desc">Personal portfolio.</p>
+          <p class="project-note">Website where people can learn more about me.</p>
+        </div>
+
+
+
   </section>
 
   <section class="contact" id="contact">
