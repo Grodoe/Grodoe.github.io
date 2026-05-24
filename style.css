@@ -251,20 +251,20 @@ section{
   box-sizing: border-box;
 } 
 
-#taekwondo { 
+#software-development { 
   
   grid-column: 1 / 2; 
   grid-row: 1 / 2; 
 
 } 
-#ultimate-frisbee { 
+#taekwondo { 
  
   grid-column: 2 / 3; 
   grid-row: 1 / 2; 
 
 } 
 
-#software-development {
+#ultimate-frisbee {
   grid-column: 1 / 2; 
   grid-row: 2 / 3; 
 }
